@@ -1,6 +1,11 @@
-const { format } = require('date-fns');
-const { v4: uuid } = require('uuid');
+import express from "express";
 
-console.log(format(new Date(), 'yyyy-MM-dd HH:mm:ss'));
+const app = express();
 
-console.log(uuid());
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on http://localhost:3000");
+});
